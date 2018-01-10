@@ -10,10 +10,10 @@ import { Output } from '@angular/core';
 
 export class HeaderComponent {
     // EventEmitter can be used through other components
-    @Output() featureSelected = new EventEmitter<string>();
+   // @Output() featureSelected = new EventEmitter<string>();
 
-    onSelect(feature: string) {
-        this.featureSelected.emit(feature);
-    }
+    // onSelect(feature: string) {
+    //     this.featureSelected.emit(feature);
+    // }
 
 }
