@@ -10,10 +10,11 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 // domain slash nothing... So we add a default path
 const appRoutes: Routes = [
     // Only redirect if the full path isn't empty
+     // order in routes matter.
     { path: '', redirectTo: '/recipes', pathMatch: 'full' },
     { path: 'recipes', component: RecipesComponent, children: [
         { path: '', component: RecipeStartComponent },
-        { path: 'new', component: RecipeEditComponent }, // order in routes matter.
+        { path: 'new', component: RecipeEditComponent },
         { path: ':id', component: RecipeDetailComponent },
         { path: 'id/edit', component: RecipeEditComponent }
     ]

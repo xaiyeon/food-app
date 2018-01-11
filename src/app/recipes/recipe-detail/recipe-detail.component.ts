@@ -2,7 +2,8 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
 import { ActivatedRoute } from '@angular/router';
-import { Params } from '@angular/router/src/shared';
+import { Params } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -16,7 +17,8 @@ export class RecipeDetailComponent implements OnInit {
 
   // Need to retrieve the id now
   constructor(private recipeService: RecipeService,
-  private route: ActivatedRoute ) { }
+  private route: ActivatedRoute,
+  private router: Router ) { }
 
   ngOnInit() {
     // only on single use
@@ -31,6 +33,13 @@ export class RecipeDetailComponent implements OnInit {
 
   onAddShoppingList() {
     this.recipeService.addIngredientsShoppingList(this.recipe.ingredients);
+  }
+
+  onEditRecipe() {
+    // simpler
+    this.router.navigate(['edit'], {relativeTo: this.route});
+    // complex
+    //this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
   }
 
 }
