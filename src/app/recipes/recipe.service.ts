@@ -28,7 +28,10 @@ export class RecipeService {
       'http://newyork.seriouseats.com/images/2012/04/20120419-202554-Mama-Meena%27s-lumpia-shanghai.jpg'
       , [
           new Ingredient('Flour', 1)
-      ])
+      ]),
+      new Recipe('Lasagna', 'An Italian specialty that is like smashed spaghetti.', 'https://atmedia.imgix.net/2832f13af92f5bcf3ef860796044d2355e770c03?w=800&fit=max',
+        [ new Ingredient('Tomato', 5), new Ingredient('Pasta', 50) 
+    ]) 
     
       ];
 
